@@ -38,15 +38,15 @@ class Solution:
         
         # For n >= 3, we use the recurrence relation
         # We only need to keep track of the last 2 values
-        prev2 = 1  # ways(1)
-        prev1 = 2  # ways(2)
+        prev2 = 1  # ways(1) = number of ways to reach stair 1
+        prev1 = 2  # ways(2) = number of ways to reach stair 2
         
         # Build up from step 3 to step n
         for i in range(3, n + 1):
             current = prev1 + prev2
             # Shift the window
             prev2 = prev1
-            prev1 = current
+            prev1 = current # return prev1 as the latest current value, therefore the final result.
         
         return prev1
     
