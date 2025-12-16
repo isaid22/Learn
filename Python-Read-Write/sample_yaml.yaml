@@ -1,0 +1,31 @@
+updated_at: now
+model:
+  input_dim: 10
+  latent_dim: 8
+training:
+  batch_size: 512
+  learning_rate: 0.001
+  num_epochs: 500
+  starting_epoch: 0
+  shuffle: true
+  optimizer: adam
+  available_optimizers:
+  - adam
+  - sgd
+  - rmsprop
+  loss_fn: mse
+  num_workers: 4
+  resume_training_from_checkpoint: true
+starting_epoch: 0
+data:
+  train_fraction: 0.8
+  test_fraction: 0.2
+  train_data_path: data/train_data.csv
+  val_data_path: data/val_data.csv
+  test_data_path: data/test_data.csv
+  pin_memory: true
+checkpoint:
+  path: checkpoints_2025-10-17_22-29-41/autoencoder_epoch500.pt
+  save_every: 5
+device: cuda
+seed_number: 42
